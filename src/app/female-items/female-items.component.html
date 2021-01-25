@@ -1,0 +1,175 @@
+<app-header></app-header>
+<div class="content-wrapper">
+
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">AddFemaleItems</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">AddFemaleItems</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <div class="card card-primary">
+        
+        <!-- /.card-header -->
+        <!-- form start  (ngSubmit)="uploadBanner(uploadbannerform) 
+            (ngSubmit)="uploadFemaleAcess(uploadFemaleAcessform)"
+            
+            "-->
+        <form role="form" #uploadFemaleAcessform='ngForm' >
+          <div class="card-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+              <input type="email" name="name" class="form-control" id="exampleInputEmail1" (change)="onNameChanged($event)"placeholder="Enter Name" ngModel>
+            </div>
+            
+            <div class="form-group">
+              <label for="exampleInputFile">Upload Image</label>
+              <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="exampleInputFile" name="banner_image"  (change)="onImageChanged($event)" >
+                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                  <span class="input-group-text" id="">Upload</span>
+                </div>
+              </div>
+              <div class="form-group" #fgName="ngModelGroup" ngModelGroup="Des">
+                <label for="exampleInputEmail1">features</label>
+                <input type="email" name="features" class="form-control"ngModel  id="exampleInputEmail1" placeholder="Enter Name" (change)="onfeatureChanged($event)" > 
+              
+                <div>
+                    <label for="exampleInputEmail1">description</label>
+                    <input type="email" name="description" class="form-control"ngModel  id="exampleInputEmail1" placeholder="Enter Name" (change)="onDesChanged($event)">
+                   
+                </div>
+            </div>
+              
+              <div class="form-group">
+                <label for="exampleInputEmail1">price</label>
+                <input type="email" name="price" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onPriceChanged($event)">
+              </div>
+             
+
+               <div class="form-group">
+                <label for="exampleInputEmail1"> weight</label>
+                <input type="email" name="weight" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onWeightChanged($event)">
+              </div>
+
+            
+              <div class="form-group">
+                <label>category</label>
+                <select class="form-control select2 select2-hidden-accessible" ngModel name="category" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true" (change)="onSelectChange($event)">
+                    <option selected="Please Select the option" data-select2-id="1 ">Please Select the option</option>
+                 
+                  <option data-select2-id="face" value="earring">Earrings</option>
+                
+                  <option data-select2-id="32" value="nose_pins">Nose Pins</option>
+                 
+                
+                  <option data-select2-id="32" value="armlet"> Armlet</option>
+
+                  <option data-select2-id="32" value="Braclet"> Braclet</option>
+
+                  <option data-select2-id="32" value="ring"> Rings</option>
+                  <option data-select2-id="32" value="masonry_key">Masonry-Key</option>
+         
+     
+                  <option data-select2-id="32" value="waist_belt">Waist Belt</option>
+                  <option data-select2-id="32" value="anklet">Anklet</option>
+                
+                  <option data-select2-id="32" value="bridal_set">  Bridalset</option>
+                </select>
+              </div>
+           
+              <div class="form-group">
+                <label for="exampleInputEmail1">   metal</label>
+                <input type="email" name="metal" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name"  (change)="onMetalChanged($event)">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1"> platted_metal</label>
+                <input type="email" name="platted_metal" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onplattedmetalChanged($event)">
+              </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">delivery_type</label>
+                <input type="email" name="delivery_type" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="ondeliveryTypeChanged($event)" >
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">jewellery_type</label>
+                <input type="email" name="jewellery_type" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name"  (change)="onjewelleryTypeChanged($event)">
+              </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">color</label>
+                <input type="email" name="color" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="oncolorChanged($event)">
+              </div>
+
+       
+              <div class="form-group">
+                <label for="exampleInputEmail1">modelreview</label>
+                <input type="email" name="reviews" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onmodelreviewsChanged($event)">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">pricereview</label>
+                <input type="email" name="reviews" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onpricereviewsChanged($event)">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">stone</label>
+                <input type="email" name="stone" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onstoneChanged($event)">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">stone_shape</label>
+                <input type="email" name="stone_shape" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onstoneShapeChanged($event)">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">number_of_stones</label>
+                <input type="email" name="number_of_stones" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onnumberStonesChanged($event)">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">material</label>
+                <input type="email" name="material" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onmaterialChanged($event)">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">no_of_pieces</label>
+                <input type="email" name="no_of_pieces" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="onPiecesChanged($event)">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">discount</label>
+                <input type="email" name="discount" class="form-control" ngModel id="exampleInputEmail1" placeholder="Enter Name" (change)="ondiscountChanged($event)">
+              </div>
+
+            </div>
+            
+          </div>
+          <!-- /.card-body -->
+
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary" (click)="uploadFemaleAcess()">Submit</button>
+
+            <!-- (click)="uploadBanner()" [disabled]="buttonboool===true ? true : false " -->
+          </div>
+        </form>
+      </div>
+
+
+
+</div>
+
+
