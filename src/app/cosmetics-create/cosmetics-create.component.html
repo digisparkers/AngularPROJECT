@@ -1,3 +1,5 @@
+
+<app-loader *ngIf="loaderbool"></app-loader>
 <app-header></app-header>
 <div class="content-wrapper">
 
@@ -39,10 +41,11 @@
                 </div>
               </div>
               <div class="form-group" #fgName="ngModelGroup" ngModelGroup="Des">
+                <div class="form-group">
                 <label for="exampleInputEmail1">features</label>
                 <input type="email" name="features" class="form-control"ngModel  id="exampleInputEmail1" placeholder="Enter Name" (change)="onfeatureChanged($event)" > 
-              
-                <div>
+              </div>
+                <div  class="form-group">
                     <label for="exampleInputEmail1">description</label>
                     <input type="email" name="description" class="form-control"ngModel  id="exampleInputEmail1" placeholder="Enter Name" (change)="onDesChanged($event)">
                    

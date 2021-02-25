@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
+import {ToastrService} from 'ngx-toastr'
 
 @Component({
   selector: 'app-female-hair',
@@ -24,7 +25,7 @@ export class FemaleHairComponent implements OnInit {
  selectCat:string;
  weight:string;
  delivery:string;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private toast:ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -146,9 +147,10 @@ this.reviews.modelreview=event.target.value;
 
 
 
-this.http.post(`http://127.0.0.1:8000/fashion/${this.endpoint}/create/`,uploadData).subscribe(ele => {
+this.http.post(`http://ec2-15-206-189-63.ap-south-1.compute.amazonaws.com/${this.endpoint}/create/`,uploadData).subscribe(ele => {
 
-console.log(ele)
+console.log(ele);
+
 
 })
 

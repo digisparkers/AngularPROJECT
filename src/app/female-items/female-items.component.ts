@@ -196,7 +196,7 @@ this.Acessories=event.target.value;
 //  console.log(this.chageporperty)
 //  uploadFemaleAcessform.value[this. chageporperty]= uploadData;
 //const get=this.selectCat==='nose_pins'?'nose/pins':this.selectCat==='masonry_key'?'masonry/key':this.selectCat==='waist_belt'?'waist/belt':this.selectCat;
-let url=`http://127.0.0.1:8000/fashion/${this.selectCat==='nose_pins'?'nose/pins':this.selectCat==='masonry_key'?'masonry/key':this.selectCat==='waist_belt'?'waist/belt':this.selectCat}/create/`
+let url=`http://ec2-15-206-189-63.ap-south-1.compute.amazonaws.com/${this.selectCat==='nose_pins'?'nose/pins':this.selectCat==='masonry_key'?'masonry/key':this.selectCat==='waist_belt'?'waist/belt':this.selectCat}/create/`
 console.log(url);
 
 

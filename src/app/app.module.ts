@@ -12,11 +12,19 @@ import { CosmeticsCreateComponent } from './cosmetics-create/cosmetics-create.co
 import { FashionCreateComponent } from './fashion-create/fashion-create.component';
 import { FemaleAccessoriesComponent } from './female-accessories/female-accessories.component';
 import {FemaleItemsComponent} from './female-items/female-items.component';
-import { FemaleHairComponent } from './female-hair/female-hair.component'
+import { FemaleHairComponent } from './female-hair/female-hair.component';
+import { ToastrModule } from 'ngx-toastr';
+import {PostService} from "./services/post.service"
+import {SucesslogginggService} from "./services/sucessloggingg.service"
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './pages/login/login.component';
+import { CosmetictabelComponent } from './datatable/cosmetictabel/cosmetictabel.component';
+import { AcessoriesComponent } from './datatable/acessories/acessories.component';
+import { LoaderComponent } from './core/loader/loader.component';
 
 const routes=[
-
- {path:'',component:UploadbannerComponent},
+  {path:'',component: LoginComponent},
+ {path:'uploadbanner',component:UploadbannerComponent},
 
  {path:'AddCosmetic',component:CosmeticsCreateComponent},
 
@@ -24,12 +32,16 @@ const routes=[
 
  {path:'AddFemaleItems',component: FemaleItemsComponent},
  {path:'AddFemaleHari',component: FemaleHairComponent},
+ {path:'Cosmetictabel',component: CosmetictabelComponent},
+ {path:'acessoriestabel',component:AcessoriesComponent },
+ {path:'LoaderTesting',component:LoaderComponent },
 
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
+   
     HeaderComponent,
     HomeComponent,
     UploadbannerComponent,
@@ -39,15 +51,27 @@ const routes=[
     FemaleAccessoriesComponent,
     FemaleItemsComponent,
     FemaleHairComponent,
+    LoginComponent,
+    CosmetictabelComponent,
+    AcessoriesComponent,
+    LoaderComponent,
+    
    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
-  providers: [],
+  providers: [PostService,SucesslogginggService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

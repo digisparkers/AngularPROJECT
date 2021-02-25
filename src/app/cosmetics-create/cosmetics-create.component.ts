@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
+import {PostService} from '../services/post.service';
+import {SucesslogginggService} from "../services/sucessloggingg.service"
 
 @Component({
   selector: 'app-cosmetics-create',
@@ -10,12 +12,13 @@ export class CosmeticsCreateComponent implements OnInit {
   name: string;
   cover: File;
   description:any={};
+  loaderbool:boolean=false;
   price:string;
  Discount:string;
  selectCat:string;
  chageporperty:string;
  buttonboool:boolean=true;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private postMethod:PostService,private successmsg:SucesslogginggService) { }
 
   ngOnInit(): void {
   }
@@ -89,13 +92,11 @@ this.chooseswitch(this.selectCat);
         uploadData.append('price', this.price);
         uploadData.append('weight', this.Discount);
         uploadData.append('category',this.selectCat);
+        
+this.loaderbool=true;
     
-    
-        this.http.post(`http://127.0.0.1:8000/cosmetics/${this.selectCat}/create/`,uploadData).subscribe(elel => {
+    this.postMethod.postData(`http://ec2-13-232-92-217.ap-south-1.compute.amazonaws.com/${this.selectCat}/create/`,uploadData).subscribe(ele => this.successmsg.SuccessLog(ele,'acessoriestabel'))
 
-console.log(elel);
-
-        })
     
       }
     

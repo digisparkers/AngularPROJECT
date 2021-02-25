@@ -10,7 +10,9 @@ export class FemaleAccessoriesComponent implements OnInit {
   name: string;
   cover: File;
   description:any={};
+  submitbool:boolean=true;
   reviews:any={};
+  ImageName:string='upload Image'
   price:string;
  Discount:string;
  selectCat:string;
@@ -48,7 +50,7 @@ export class FemaleAccessoriesComponent implements OnInit {
       onImageChanged(event){
     
         this.cover = event.target.files[0];
-        console.log(this.cover)
+        this.ImageName=this.cover.name;
       }
     
     
@@ -99,8 +101,9 @@ this.reviews.modelreview=event.target.value;
     
       onSelectChange(event){
   this.selectCat=event.target.value;
-  console.log(this.selectCat);
-this.buttonboool=false
+  if(this.selectCat!=''){
+    this.submitbool=false
+  }
 
 
     }
@@ -198,7 +201,7 @@ this.Acessories=event.target.value;
 //  console.log(this.chageporperty)
 //  uploadFemaleAcessform.value[this. chageporperty]= uploadData;
 
-  this.http.post(`http://127.0.0.1:8000/fashion/${this.selectCat}/accessories/create/`,uploadData).subscribe(elel => {
+  this.http.post(`http://ec2-15-206-189-63.ap-south-1.compute.amazonaws.com/${this.selectCat}/accessories/create/`,uploadData).subscribe(elel => {
 
   console.log(elel);
   
